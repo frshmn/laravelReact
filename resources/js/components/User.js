@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 function User() {
 
@@ -18,8 +19,14 @@ function User() {
         <div>
             <h1>Userページ</h1>
             <ul>
-                {users.map((user) => <li key="{user.id}">{user.name}</li>)}
-            </ul>
+              {users.map((user) =>
+              <li key={user.id}>
+                  {user.name}
+                  <Link to={`/user/${user.id}`}>
+                      詳細
+                  </Link>
+              </li>)}
+          </ul>
         </div>
     );
 }
