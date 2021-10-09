@@ -71330,7 +71330,7 @@ function UserDetail(props) {
       user = _useState2[0],
       setUser = _useState2[1];
 
-  userEffect(function () {
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     getUser();
   }, []);
 
@@ -71343,7 +71343,7 @@ function UserDetail(props) {
             case 0:
               console.log(props.match);
               _context.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/user/".concat(props.match.param.id));
+              return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/user/".concat(props.match.params.id));
 
             case 3:
               response = _context.sent;
